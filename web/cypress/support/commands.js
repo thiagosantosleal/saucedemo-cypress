@@ -25,6 +25,7 @@
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 
 import 'cypress-real-events'
+import './actions/consultancy.actions'
 import { getTodayFormattedDate } from './utils'
 
 Cypress.Commands.add('start', () => {
