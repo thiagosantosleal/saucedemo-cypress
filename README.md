@@ -1,39 +1,99 @@
-# 🥋 WebDojo
+# Automação de Testes - SauceDemo
 
-![WebDojo Cover](.github/cover.png)
+## Descrição
 
-## 🚀 Sobre o Projeto
+Projeto desenvolvido como parte de uma avaliação técnica para a vaga de QA.
 
-O **WebDojo** é um aplicativo exclusivo para os alunos do **Curso Ninja do Cypress**, ministrado pelo mestre **Fernando Papito**! 🥷💻 Ele foi criado para ser um **campo de treinamento prático**, onde os alunos podem aprimorar suas habilidades em automação de testes com desafios e exercícios focados no **Cypress**.
+A automação foi desenvolvida utilizando Cypress com TypeScript, seguindo o padrão Page Object Model (POM), com foco na organização, reutilização de código e manutenção dos testes.
 
-🛠️ Tecnologias Utilizadas
+---
 
-- [x] Git & GitHub 🌍 (Controle de versão e repositório remoto)
-- [x] Bash (Linha de Comando) 💻 (Execução de scripts e comandos)
-- [x] Visual Studio Code 🖥️ (Editor de código recomendado)
-- [x] Node.js (22+) 🟢 (Runtime JavaScript)
-- [x] Gerenciador de pacotes (npm ou yarn) 📦 (Dependências do projeto)
-- [x] Cypress 🧪 (Framework de testes end-to-end)
-- [x] Docker & Docker Compose 🐳 (Ambiente isolado para execução)
-- [x] PostgreSQL 🗄 (Banco de dados relacional)
-- [x] Use Bruno 🔌 (Cliente de API para testes de requisições)
+## Tecnologias utilizadas
 
-## 📖 Como Usar
+- Cypress
+- TypeScript
+- Node.js
 
-As instruções detalhadas de instalação e uso do **WebDojo** estão disponíveis dentro do **Curso Ninja do Cypress**.
+---
 
-🔗 **Acesse o curso e seja Ninja da Automação em Cypress!** 👉 [ninjadocypress.com.br](https://ninjadocypress.com.br)
+## Estrutura do projeto
 
-## ⚠️ Contribuição
+```
+cypress/
+│
+├── e2e/
+│   ├── login.cy.ts
+│   ├── cart.cy.ts
+│   ├── checkout.cy.ts
+│   └── finishOrder.cy.ts
+│
+├── pages/
+│   ├── LoginPage.ts
+│   ├── InventoryPage.ts
+│   ├── CartPage.ts
+│   └── CheckoutPage.ts
+│
+└── support/
+    ├── commands.ts
+    └── e2e.ts
+```
 
-O **WebDojo** é um ambiente **exclusivo** para os alunos do **Curso Ninja do Cypress**, e por isso, **não aceita contribuições externas**.
+---
 
-📢 Para suporte e dúvidas, utilize os canais oficiais do curso!
+## Casos de teste automatizados
 
-## 🔒 Licença
+- CT001 – Validar login com credenciais válidas
+- CT003 – Validar adição de produto ao carrinho
+- CT007 – Validar checkout com todos os campos obrigatórios preenchidos
+- CT011 – Validar finalização da compra com sucesso
 
-Este projeto é **exclusivo para alunos** do **Curso Ninja do Cypress**. 🚫 O compartilhamento ou distribuição sem autorização é proibido.
+---
 
-------
+## Como executar o projeto
 
-💙 Feito com dedicação e muito café por **Fernando Papito** e a equipe do **Curso Ninja do Cypress**. 🚀🔥
+### Instalar as dependências
+
+```bash
+npm install
+```
+
+### Abrir o Cypress
+
+```bash
+npm run test:ui
+```
+
+### Executar todos os testes
+
+```bash
+npm test
+```
+
+### Executar testes individuais
+
+```bash
+npm run test:login
+npm run test:cart
+npm run test:checkout
+npm run test:finish
+```
+
+---
+
+## Padrão utilizado
+
+- Page Object Model (POM)
+- Testes independentes
+- Separação entre páginas e cenários de teste
+- Código desenvolvido em TypeScript
+
+## Observações
+
+Os cenários automatizados foram escolhidos com base na criticidade do fluxo de compra, contemplando as principais funcionalidades da aplicação:
+
+- Login
+- Adição de produto ao carrinho
+- Checkout
+- Finalização da compra
+
+Essa abordagem prioriza a automação dos fluxos de maior valor para o negócio.

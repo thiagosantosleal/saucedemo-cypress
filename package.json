@@ -1,0 +1,24 @@
+{
+  "name": "saucedemo-cypress",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "serve -s dist -p 3000",
+    "test": "cypress run",
+    "test:ui": "cypress open",
+    "test:login": "cypress run --spec cypress/e2e/login.cy.ts",
+    "test:cart": "cypress run --spec cypress/e2e/cart.cy.ts",
+    "test:checkout": "cypress run --spec cypress/e2e/checkout.cy.ts",
+    "test:finish": "cypress run --spec cypress/e2e/finishOrder.cy.ts"
+  },
+  "dependencies": {
+    "cypress-real-events": "^1.15.0",
+    "serve": "^14.2.4"
+  },
+  "devDependencies": {
+    "@faker-js/faker": "^10.1.0",
+    "@types/node": "^25.9.3",
+    "cypress": "^14.3.3",
+    "typescript": "^5.8.3"
+  }
+}
