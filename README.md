@@ -1,10 +1,21 @@
 # Automação de Testes - SauceDemo
 
-## Descrição
+Projeto desenvolvido como parte de uma avaliação técnica para a vaga de Quality Assurance (QA).
 
-Projeto desenvolvido como parte de uma avaliação técnica para a vaga de QA.
+O projeto contempla:
 
-A automação foi desenvolvida utilizando Cypress com TypeScript, seguindo o padrão Page Object Model (POM), com foco na organização, reutilização de código e manutenção dos testes.
+- História do Usuário
+- Critérios de Aceite
+- Matriz de Rastreabilidade
+- Casos de Teste em BDD
+- Automação com Cypress + TypeScript
+- Pipeline de Integração Contínua (CI) com GitHub Actions
+
+---
+
+## Objetivo
+
+Automatizar os principais fluxos da aplicação SauceDemo utilizando Cypress com TypeScript, seguindo o padrão **Page Object Model (POM)**, além de documentar todo o processo de testes, desde a especificação da História do Usuário até a implementação da automação e da pipeline de Integração Contínua.
 
 ---
 
@@ -13,39 +24,49 @@ A automação foi desenvolvida utilizando Cypress com TypeScript, seguindo o pad
 - Cypress
 - TypeScript
 - Node.js
+- Git
+- GitHub
+- GitHub Actions
 
 ---
 
 ## Estrutura do projeto
 
-```
-cypress/
-│
-├── e2e/
-│   ├── login.cy.ts
-│   ├── cart.cy.ts
-│   ├── checkout.cy.ts
-│   └── finishOrder.cy.ts
-│
-├── pages/
-│   ├── LoginPage.ts
-│   ├── InventoryPage.ts
-│   ├── CartPage.ts
-│   └── CheckoutPage.ts
-│
-└── support/
-    ├── commands.ts
-    └── e2e.ts
+```text
+.
+├── .github/
+│   └── workflows/
+│       └── cypress.yml
+├── cypress/
+│   ├── e2e/
+│   │   ├── login.cy.ts
+│   │   ├── cart.cy.ts
+│   │   ├── checkout.cy.ts
+│   │   └── finishOrder.cy.ts
+│   ├── pages/
+│   │   ├── LoginPage.ts
+│   │   ├── InventoryPage.ts
+│   │   ├── CartPage.ts
+│   │   └── CheckoutPage.ts
+│   └── support/
+│       ├── commands.ts
+│       └── e2e.ts
+├── .gitignore
+├── cypress.config.ts
+├── package.json
+├── package-lock.json
+├── tsconfig.json
+└── README.md
 ```
 
 ---
 
 ## Casos de teste automatizados
 
-- CT001 – Validar login com credenciais válidas
-- CT003 – Validar adição de produto ao carrinho
-- CT007 – Validar checkout com todos os campos obrigatórios preenchidos
-- CT011 – Validar finalização da compra com sucesso
+- CT001 – Validar login com credenciais válidas.
+- CT003 – Validar adição de produto ao carrinho.
+- CT007 – Verificar checkout com todos os campos obrigatórios preenchidos.
+- CT011 – Validar finalização da compra com sucesso.
 
 ---
 
@@ -84,16 +105,39 @@ npm run test:finish
 
 - Page Object Model (POM)
 - Testes independentes
-- Separação entre páginas e cenários de teste
+- Organização por cenários de teste
+- Separação entre Page Objects e testes automatizados
 - Código desenvolvido em TypeScript
+
+---
 
 ## Observações
 
-Os cenários automatizados foram escolhidos com base na criticidade do fluxo de compra, contemplando as principais funcionalidades da aplicação:
+Os cenários automatizados foram selecionados com base na criticidade do fluxo de compra da aplicação, priorizando as principais funcionalidades do sistema:
 
 - Login
 - Adição de produto ao carrinho
 - Checkout
 - Finalização da compra
 
-Essa abordagem prioriza a automação dos fluxos de maior valor para o negócio.
+Essa abordagem prioriza a automação dos fluxos de maior valor para o negócio, garantindo maior cobertura dos cenários críticos da aplicação.
+
+---
+
+## Pipeline de CI
+
+O projeto possui uma pipeline de Integração Contínua (CI) utilizando **GitHub Actions**.
+
+A pipeline é executada automaticamente a cada **push** ou **Pull Request** para a branch `main`, realizando:
+
+- Checkout do código;
+- Instalação das dependências do projeto;
+- Execução dos testes automatizados com Cypress.
+
+---
+
+## Autor
+
+**Thiago Santos Leal**
+
+Projeto desenvolvido para fins de avaliação técnica para a vaga de **Quality Assurance (QA)**.
